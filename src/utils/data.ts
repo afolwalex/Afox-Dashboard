@@ -1,0 +1,117 @@
+const transactions = [
+    {
+        id: 1,
+        ref: 'TRF67382990TYH67',
+        amount: `₦20,000`,
+        user: 'Olawale Afolabi',
+        status: 'completed',
+    },
+    {
+        id: 2,
+        ref: 'TRF67382990TYH67',
+        amount: `₦20,000`,
+        user: 'Olawale Afolabi',
+        status: 'pending',
+    },
+    {
+        id: 3,
+        ref: 'TRF67382990TYH67',
+        amount: `₦20,000`,
+        user: 'Olawale Afolabi',
+        status: 'pending',
+    },
+    {
+        id: 4,
+        ref: 'TRF67382990TYH67',
+        amount: `₦20,000`,
+        user: 'Olawale Afolabi',
+        status: 'completed',
+    },
+    {
+        id: 5,
+        ref: 'TRF67382990TYH67',
+        amount: `₦20,000`,
+        user: 'Olawale Afolabi',
+        status: 'failed',
+    },
+    {
+        id: 6,
+        ref: 'TRF67382990TYH67',
+        amount: `₦20,000`,
+        user: 'Olawale Afolabi',
+        status: 'completed',
+    },
+    {
+        id: 7,
+        ref: 'TRF67382990TYH67',
+        amount: `₦20,000`,
+        user: 'Olawale Afolabi',
+        status: 'pending',
+    },
+    {
+        id: 8,
+        ref: 'TRF67382990TYH67',
+        amount: `₦20,000`,
+        user: 'Olawale Afolabi',
+        status: 'completed',
+    },
+    {
+        id: 9,
+        ref: 'TRF67382990TYH67',
+        amount: `₦20,000`,
+        user: 'Olawale Afolabi',
+        status: 'pending',
+    },
+    {
+        id: 10,
+        ref: 'TRF67382990TYH67',
+        amount: `₦20,000`,
+        user: 'Olawale Afolabi',
+        status: 'pending',
+    },
+];
+
+const users = [
+    {
+        id: 1,
+        name: 'Olawale Afolabi',
+        gender: 'Male',
+        email: 'olawale@mailinator.com',
+        phone: '+2349011122333',
+        status: 'Active',
+    },
+    {
+        id: 2,
+        name: 'Olawale Afolabi',
+        gender: 'Male',
+        email: 'olawale@mailinator.com',
+        phone: '+2349011122333',
+        status: 'Active',
+    },
+    {
+        id: 3,
+        name: 'Olawale Afolabi',
+        gender: 'Male',
+        email: 'olawale@mailinator.com',
+        phone: '+2349011122333',
+        status: 'Inactive',
+    },
+    {
+        id: 4,
+        name: 'Olawale Afolabi',
+        gender: 'Male',
+        email: 'olawale@mailinator.com',
+        phone: '+2349011122333',
+        status: 'Active',
+    },
+    {
+        id: 5,
+        name: 'Olawale Afolabi',
+        gender: 'Male',
+        email: 'olawale@mailinator.com',
+        phone: '+2349011122333',
+        status: 'Active',
+    },
+];
+
+export {transactions, users};

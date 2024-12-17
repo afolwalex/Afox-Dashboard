@@ -1,26 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import persistStore from 'redux-persist/es/persistStore';
+import store from './redux/store';
+import {Provider} from 'react-redux';
+import {PersistGate} from 'redux-persist/integration/react';
+import Routing from './Routing';
+import Theming from './components/Theming';
+import GlobalStyles from './styles/global.styles';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+let persistor = persistStore(store);
+
+const App = () => {
+    return (
+        <Provider store={store}>
+            <PersistGate loading={null} persistor={persistor}>
+                <Theming>
+                    <GlobalStyles />
+                    <Routing />
+                </Theming>
+            </PersistGate>
+        </Provider>
+    );
+};
 
 export default App;
