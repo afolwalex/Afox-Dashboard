@@ -21,6 +21,13 @@ export const HeaderStyle = styled.div`
         }
     }
 
+    button.no-b {
+        border: 0;
+        outline: 0;
+        background: none;
+        color: ${props => props.theme.text};
+    }
+
     button.pin {
         background-color: ${props => props.theme.main};
         color: ${props =>

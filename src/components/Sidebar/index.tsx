@@ -1,12 +1,8 @@
 import {SidebarDiv, SidebarMenu} from '../../styles/dashboard.styles';
 import Logo from '../../assets/logo192.png';
-import {MdDarkMode, MdOutlineWbSunny} from 'react-icons/md';
 import {LuHome, LuSettings, LuWallet} from 'react-icons/lu';
 import {TbReportAnalytics} from 'react-icons/tb';
 import {HiOutlineUsers} from 'react-icons/hi2';
-import {useAppDispatch, useAppSelector} from '../../redux/hooks';
-import {PiSignOutBold} from 'react-icons/pi';
-import {setTheme} from '../../redux/features/settings/settingsSlice';
 import {NavLink, useNavigate} from 'react-router-dom';
 import Confirm from '../Confirm';
 import {useState} from 'react';
@@ -28,11 +24,7 @@ const Sidebar = ({
 }: Props) => {
     const navigate = useNavigate();
 
-    const dispatch = useAppDispatch();
-
     const [openConfirm, setOpenConfirm] = useState(false);
-
-    const {theme} = useAppSelector(state => state.settings);
 
     return (
         <SidebarDiv
@@ -78,33 +70,6 @@ const Sidebar = ({
                             <LuSettings size={25} />
                             <span>Settings</span>
                         </NavLink>
-                    </li>
-                </ul>
-                <ul className="second">
-                    <li>
-                        <button
-                            onClick={() =>
-                                dispatch(
-                                    setTheme(
-                                        theme === 'dark' ? 'light' : 'dark',
-                                    ),
-                                )
-                            }>
-                            {theme !== 'dark' ? (
-                                <MdDarkMode size={25} />
-                            ) : (
-                                <MdOutlineWbSunny size={25} />
-                            )}
-                            <span>
-                                {theme !== 'dark' ? 'Dark' : 'Light'} Mode
-                            </span>
-                        </button>
-                    </li>
-                    <li>
-                        <button onClick={() => setOpenConfirm(true)}>
-                            <PiSignOutBold size={25} />
-                            <span>Sign Out</span>
-                        </button>
                     </li>
                 </ul>
             </SidebarMenu>

@@ -10,7 +10,9 @@ import {
 import {useState} from 'react';
 import Notifications from './Notifications';
 import ProfileDropDown from './ProfileDropDown';
-import {MdMenu} from 'react-icons/md';
+import {MdDarkMode, MdMenu, MdOutlineWbSunny} from 'react-icons/md';
+import {useAppDispatch, useAppSelector} from '../../redux/hooks';
+import {setTheme} from '../../redux/features/settings/settingsSlice';
 
 const Header = ({
     openMenu,
@@ -25,8 +27,12 @@ const Header = ({
     minimizeHandler: (val: boolean) => void;
     minimized: boolean;
 }) => {
+    const dispatch = useAppDispatch();
+
     const [openProfile, setOpenProfile] = useState(false);
     const [openNoti, setOpenNoti] = useState(false);
+
+    const {theme} = useAppSelector(state => state.settings);
 
     return (
         <HeaderStyle>
@@ -64,7 +70,17 @@ const Header = ({
                     <input type="text" placeholder="Search" />
                     <FiSearch size={18} />
                 </div>
-
+                <button
+                    className="me-3 no-b"
+                    onClick={() =>
+                        dispatch(setTheme(theme === 'dark' ? 'light' : 'dark'))
+                    }>
+                    {theme !== 'dark' ? (
+                        <MdDarkMode size={25} />
+                    ) : (
+                        <MdOutlineWbSunny size={25} />
+                    )}
+                </button>
                 <button className="pin me-3" onClick={() => setOpenNoti(true)}>
                     <FiBell />
                 </button>

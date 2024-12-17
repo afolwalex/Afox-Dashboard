@@ -37,6 +37,7 @@ export const SidebarDiv = styled.div<{minimize: string}>`
     transition: all 0.3s ease-in-out;
     border-right: 1px solid ${props => props.theme.divider};
     font-size: 0.8rem;
+    overflow-y: auto;
 
     @media (max-width: 991px) {
         margin-left: -220px;
@@ -77,11 +78,6 @@ export const SidebarMenu = styled.div<{minimize: string}>`
         list-style: none;
         margin: 0;
         padding: 0;
-        height: 72%;
-
-        &.second {
-            height: 28%;
-        }
 
         li {
             margin-top: 15px;
