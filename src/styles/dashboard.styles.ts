@@ -37,7 +37,33 @@ export const SidebarDiv = styled.div<{minimize: string}>`
     transition: all 0.3s ease-in-out;
     border-right: 1px solid ${props => props.theme.divider};
     font-size: 0.8rem;
-    overflow-y: auto;
+
+    .sidebar-content {
+        max-height: 100vh;
+
+        &:hover {
+            overflow-y: auto;
+        }
+
+        &::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background: #f0f0f0;
+            border-radius: 4px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: linear-gradient(45deg, #6c63ff, #3f3d56);
+            border-radius: 4px;
+            border: 2px solid #f0f0f0;
+        }
+
+        &::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(45deg, #5b54d6, #2e2b47);
+        }
+    }
 
     @media (max-width: 991px) {
         margin-left: -220px;
